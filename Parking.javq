@@ -1,0 +1,19 @@
+public class ParkingSpot {
+private int spotId;
+private String spotType; // Small, Medium, Large
+private boolean isAvailable;
+private Vehicle vehicle; // null if empty
+public ParkingSpot(int spotId, String spotType) {
+this.spotId = spotId;
+this.spotType = spotType;
+this.isAvailable = true;
+this.vehicle = null;
+}
+public boolean parkVehicle(Vehicle vehicle) {
+if (isAvailable) {
+this.vehicle = vehicle;
+isAvailable = false;
+return true;
+}
+return false;
+}
